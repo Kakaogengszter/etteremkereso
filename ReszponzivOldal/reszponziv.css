@@ -1,0 +1,34 @@
+header{
+	text-align: center;
+}
+
+.kep{
+  
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  
+}
+body{
+	background-color:#556B2F	
+}
+
+#col-75 {
+    
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+	text-align:center;
+}
+#label{
+    color: white;
+    display: inline-block;
+}
+
+#carouselExampleFade{
+    height: 40%;
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
