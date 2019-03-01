@@ -52,7 +52,7 @@ html {
     background-size: cover;
 }
 .item:nth-child(2) {
-    background: url(kanalak.jpg) no-repeat center center fixed;
+    background: url(tanyer.jpeg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
