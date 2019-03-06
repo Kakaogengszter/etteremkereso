@@ -1,3 +1,5 @@
+
+
 html {
     position: relative;
     min-height: 100%;
@@ -77,8 +79,7 @@ html {
 div.form{
   margin-top: 200px;
 }
-
-<style>
+<script>
     .aktiv{
         background-color: yellow;
     }
@@ -87,7 +88,41 @@ div.form{
         font-weight: 900;
         font-size: large;
     }
-</style>
+</script>
+
+.container-fluid { max-width: 1200px; }
+
+header {
+	background: #563d7c;
+	padding: 2em 1em;
+	color: #fff;
+	margin-bottom: 2em;
+	h1 {
+		font-weight: 200;
+	}
+}
+
+.card {
+	box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+	img {
+		width: 100%;
+	}
+}
+
+[class*="row"] {
+	margin-bottom: 1em;
+  justify-content: center;
+}
+
+[class*="col-"] {
+
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	width: 100%;
+}
+
+
+
 
 table, th, td {
   border: 1px solid black;

@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="../reszponziv.css">
   <link rel="stylesheet"  type="text/css" href="fooldal.css">
-  <script src="fooldal.js"></script>
 
     <title>Szegedi Éttermek</title>
 
@@ -80,21 +79,3 @@
 
 </body>
 </html>
-
-<script src="../jquery-3.3.1.min.js"></script>
-<script>
-
-        $(document).on("change","#jatekos", function(){
-            let mez = $(this).val();
-            console.log(mez);
-
-            if(mez != "alap"){
-            $.get("jatekos.php?mez="+mez,function(adat){
-              $("#adatok").html(adat);
-
-            });
-            }
-        });
-  });
-  
-</script>
