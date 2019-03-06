@@ -20,13 +20,13 @@ if (isset($_SESSION['uid'])){
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+      <script src="../jquery-3.3.1.min.js" charset="UTF-8"></script>
     <!-- Bootstrap CSS -->
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="../reszponziv.css">
   <link rel="stylesheet"  type="text/css" href="fooldal.css">
-  <script src="fooldal.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
 
     <title>Szegedi Éttermek</title>
 
@@ -50,7 +50,7 @@ if (isset($_SESSION['uid'])){
           Éttermek
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="../Ettermek/ettermek.php">Összes étterem</a>
+          <a class="dropdown-item" href="../Ettermek/index.php">Összes étterem</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Pontozás</a>
         </div>
