@@ -14,7 +14,7 @@ $tabla .= "   <link rel='stylesheet' href='https://use.fontawesome.com/releases/
 
         <div class='col-md-5 '>
           <div class='row'>
-           <div class='card flex-md-row mb-4 shadow-sm h-md-250'>
+           <div class='card flex-md-row mb-3 shadow-sm h-md-250'>
               <div class='card-body d-flex flex-column align-items-start'>";
 
 $tabla .=                 "<h6 class='mb-0'>
@@ -24,7 +24,7 @@ $tabla .=                 "<h6 class='mb-0'>
                  <p class='card-text mb-auto'>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
                  <a class='btn btn-outline-primary btn-sm' role='button' href ='https://www.google.com/maps/search/{$row['Cim']}'>{$row['Cim']}</a>
               </div>
-              <img class='card-img-right flex-auto d-none d-lg-block' alt='Thumbnail [200x250]' src='kepek/burgerking.jpg' class='img-fluid' alt='Responsive image' >
+              <img class='card-img-right flex-auto d-none d-lg-block' alt='Thumbnail [200x250]' src={$row['kep_eleres']} class='img-fluid' alt='Responsive image' >
            </div>
         </div>
       </div>'";
@@ -121,7 +121,7 @@ $tabla.="</table>";*/
   </div>
 
 
-<div style="margin-top:100px;margin-left:200px" class="d-flex flex-wrap align-items-center container-fluid " >
+<div style="margin-top:100px;" class="d-flex flex-wrap align-items-center container-fluid col-md-10" >
   <?php
   echo $tabla;
    ?>
