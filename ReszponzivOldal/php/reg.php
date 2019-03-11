@@ -17,3 +17,4 @@
             $_SESSION['reg'] = "A regisztráció sikertelen!";
         }
     }
+    header("Location: ../Ettermek/etterem.php")

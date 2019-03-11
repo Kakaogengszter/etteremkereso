@@ -1,8 +1,13 @@
+
+
+<html>
+<body>
 <?php
 session_start();
+
 require_once('../connection.php');
 require_once('../functions.php');
-
+require'../menu.php';
 
 
 
@@ -19,7 +24,6 @@ if (isset($_POST['belep'])){
     if ($res) {
 
         if($res -> num_rows == 1){
-echo "1";
             //belépett
             $row = $res -> fetch_row();
             var_dump($row);
@@ -28,16 +32,18 @@ echo "1";
 
 
             $_SESSION['uid'] = $row[0];
-            header('Location: ../Fooldal/fooldal.php');
+            header("Location: ../Ettermek/etterem.php");
             echo ("Hello");
         } else {
             //érvénytelen belépés
             $_SESSION['error'] = 'Helytelen felhasználónév vagy jelszó!';
+            echo "<p>Helytelen felhasználónév vagy jelszó</p>";
 
         }
     }
 }
 
 }
+echo "</body>";
 
-  echo "Hibás felhasználónév vagy jelszó";
+?>
