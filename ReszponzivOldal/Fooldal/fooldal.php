@@ -3,19 +3,45 @@ session_start();
 require'../menu.php';
 require_once('../connection.php');
 if (!isset($_SESSION['uid'])){
-  
+
     //Nincs belépve
     $menu = file_get_contents('../In-Out/menu_out.html');
 }
 
 
 ?>
+<link rel="stylesheet" href="etterem.css"><!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <script src="../jquery-3.3.1.min.js" charset="UTF-8"></script>
+
+    <!-- Bootstrap CSS -->
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="fooldal.css">
+    <script src="../validacio.js" charset="UTF-8"></script>
+    <link rel="stylesheet" href="../reszponziv.css">
 
 
 
+    <title>Szegedi Éttermek</title>
 
-<?php echo $menu; ?>
-  <link rel="stylesheet" href="fooldal.css">
+
+  </head>
+  <body>
+
+
+
+    <nav>
+        <?php echo $menu; ?>
+    </nav>
+
+
 	<header class="w3-container w3-center w3-padding-48 w3-white" style="margin-top:50px">
   <h1 class="w3-xxxlarge" ><b>Finom ételek</b></h1>
 
