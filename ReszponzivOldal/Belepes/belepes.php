@@ -18,9 +18,38 @@ if (isset($_SESSION['uid'])){
 
 
 <!-- Remeber to put all the content you want on top of the slider below the slider code -->
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <script src="../jquery-3.3.1.min.js" charset="UTF-8"></script>
+
+    <!-- Bootstrap CSS -->
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="belepes.css">
+    <script src="../validacio.js" charset="UTF-8"></script>
+    <link rel="stylesheet" href="../reszponziv.css">
 
 
-  <link rel="stylesheet" href="belepes.css">
+
+    <title>Szegedi Éttermek</title>
+
+
+  </head>
+  <body>
+
+
+
+
+  <nav>
+      <?php echo $menu; ?>
+  </nav>
+
 <div class="form" align="center">
    <form class="flex-container" action="../php/belep.php" method="post">
         <div class="form-group" id="col-75">
