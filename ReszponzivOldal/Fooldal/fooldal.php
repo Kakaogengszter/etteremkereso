@@ -10,7 +10,7 @@ if (!isset($_SESSION['uid'])){
 
 
 ?>
-<link rel="stylesheet" href="etterem.css"><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hu">
   <head>
     <!-- Required meta tags -->
@@ -37,9 +37,7 @@ if (!isset($_SESSION['uid'])){
 
 
 
-    <nav>
-        <?php echo $menu; ?>
-    </nav>
+    
 
 
 	<header class="w3-container w3-center w3-padding-48 w3-white" style="margin-top:50px">
