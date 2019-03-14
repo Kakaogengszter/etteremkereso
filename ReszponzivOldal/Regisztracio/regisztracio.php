@@ -46,38 +46,46 @@ if (isset($_SESSION['uid'])){
 
 
 
-</form>
-<div class="form" align="center">
-   <form class="flex-container" method="post" action="../php/reg.php">
-        <div class="form-group" id="col-75">
-            <label id="label" >Felhasználónév*</label>
-            <input type="username" name = "user" class="form-control" id="exampleFormControlInput1" placeholder="Kakaógengszter" required><br>
-            <span id="userError"></span>
-        <br>
-        </div>
-		<div class="form-group" id="col-75">
-            <label id="label">Email cím*</label>
-            <input type="email" name = "email" class="form-control" id="exampleFormControlInput1" placeholder="valami@valami.com" required><br>
-            <span id="emailError"></span>
-            <br>
-        </div>
-        <div class="form-group" id="col-75">
-            <label id="label">Jelszó*</label>
-            <input type="password" name = "pwd" class="form-control" id="exampleFormControlInput1" required><br>
-            	<span id="pwdError"></span>
-              <br>
-        </div>
-		 <div class="form-group" id="col-75">
-            <label id="label">Jelszó megerősítése</label>
-            <input type="password" name = "pwdc" class="form-control" id="exampleFormControlInput1" required><br>
-            <span id="pwdcError"></span>
-            <br>
-        </div>
 
-        <div class="form-group" id="col-75">
-        <button type="submit" value="Regisztráció" name="reg" class="btn btn-dark" id="submitbtn">Regisztráció</button>
-        </div>
-</div>
+
+         <div class="card text-white mx-auto col-6 bg-dark">
+
+            <div class="card-head mt-0" id="card">
+              <div class="form" align="center">
+                 <form class="flex-container" method="post" action="../php/reg.php" >
+                      <div class="form-group" >
+                          <label id="label" >Felhasználónév*</label>
+                          <input type="username" name = "user" class="form-control" id="exampleFormControlInput1" placeholder="Kakaógengszter" required><br>
+                          <span id="userError"></span>
+                      <br>
+                      </div>
+              		<div class="form-group" >
+                          <label id="label">Email cím*</label>
+                          <input type="email" name = "email" class="form-control" id="exampleFormControlInput1" placeholder="valami@valami.com" required><br>
+                          <span id="emailError"></span>
+                          <br>
+                      </div>
+                      <div class="form-group" >
+                          <label id="label">Jelszó*</label>
+                          <input type="password" name = "pwd" class="form-control" id="exampleFormControlInput1" required><br>
+                          	<span id="pwdError"></span>
+                            <br>
+                      </div>
+              		 <div class="form-group" >
+                          <label id="label">Jelszó megerősítése</label>
+                          <input type="password" name = "pwdc" class="form-control" id="exampleFormControlInput1" required><br>
+                          <span id="pwdcError"></span>
+                          <br>
+                      </div>
+
+                      <div class="form-group">
+                      <button type="submit" value="Regisztráció" name="reg" class="btn btn-white" id="submitbtn">Regisztráció</button>
+                      </div>
+              </div>
+            </div>
+      </div>
+
+
 
 
 
