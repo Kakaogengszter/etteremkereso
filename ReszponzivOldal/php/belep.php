@@ -1,13 +1,8 @@
-
-
-<html>
-<body>
 <?php
 session_start();
 
 require_once('../connection.php');
 require_once('../functions.php');
-require'../menu.php';
 
 
 
@@ -26,7 +21,6 @@ if (isset($_POST['belep'])){
         if($res -> num_rows == 1){
             //belépett
             $row = $res -> fetch_row();
-            var_dump($row);
 
             if (password_verify($pwd, $row[2])) {
 
