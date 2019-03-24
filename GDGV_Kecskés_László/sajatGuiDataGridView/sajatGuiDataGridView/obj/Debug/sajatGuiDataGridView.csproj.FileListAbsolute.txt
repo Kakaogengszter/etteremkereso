@@ -38,3 +38,5 @@ D:\Suli\GDGV_Kecskés_László\sajatGuiDataGridView\sajatGuiDataGridView\obj\Deb
 D:\Suli\GDGV_Kecskés_László\sajatGuiDataGridView\sajatGuiDataGridView\obj\Debug\sajatGuiDataGridView.csproj.CopyComplete
 D:\Suli\GDGV_Kecskés_László\sajatGuiDataGridView\sajatGuiDataGridView\obj\Debug\sajatGuiDataGridView.exe
 D:\Suli\GDGV_Kecskés_László\sajatGuiDataGridView\sajatGuiDataGridView\obj\Debug\sajatGuiDataGridView.pdb
+D:\Suli\GDGV_Kecskés_László\sajatGuiDataGridView\sajatGuiDataGridView\obj\Debug\sajatGuiDataGridView.View.formModositUsers.resources
+D:\Suli\GDGV_Kecskés_László\sajatGuiDataGridView\sajatGuiDataGridView\obj\Debug\sajatGuiDataGridView.View.formTorolKommentek.resources

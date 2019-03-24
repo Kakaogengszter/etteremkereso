@@ -46,28 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adatbazis.cs" />
-    <Compile Include="ettermek.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Controller\Adatbazis.cs" />
+    <Compile Include="Model\comments.cs" />
+    <Compile Include="Model\ettermek.cs" />
+    <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="View\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="formModosit.cs">
+    <Compile Include="View\formModositEttermek.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formModosit.Designer.cs">
-      <DependentUpon>formModosit.cs</DependentUpon>
+    <Compile Include="View\formModositEttermek.Designer.cs">
+      <DependentUpon>formModositEttermek.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\users.cs" />
     <Compile Include="MySQLDatabaseInterface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <Compile Include="View\formModositUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\formModositUsers.Designer.cs">
+      <DependentUpon>formModositUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\formTorolKommentek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\formTorolKommentek.Designer.cs">
+      <DependentUpon>formTorolKommentek.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formModosit.resx">
-      <DependentUpon>formModosit.cs</DependentUpon>
+    <EmbeddedResource Include="View\formModositEttermek.resx">
+      <DependentUpon>formModositEttermek.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -77,7 +91,14 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\formModositUsers.resx">
+      <DependentUpon>formModositUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\formTorolKommentek.resx">
+      <DependentUpon>formTorolKommentek.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,6 +108,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SystemDesign\ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
