@@ -40,3 +40,7 @@ D:\Suli\GDGV_Kecskés_László\sajatGuiDataGridView\sajatGuiDataGridView\obj\Deb
 D:\Suli\GDGV_Kecskés_László\sajatGuiDataGridView\sajatGuiDataGridView\obj\Debug\sajatGuiDataGridView.pdb
 D:\Suli\GDGV_Kecskés_László\sajatGuiDataGridView\sajatGuiDataGridView\obj\Debug\sajatGuiDataGridView.View.formModositUsers.resources
 D:\Suli\GDGV_Kecskés_László\sajatGuiDataGridView\sajatGuiDataGridView\obj\Debug\sajatGuiDataGridView.View.formTorolKommentek.resources
+D:\Suli\GDGV_Kecskés_László\sajatGuiDataGridView\sajatGuiDataGridView\obj\Debug\sajatGuiDataGridView.View.FormLogin.resources
+D:\Suli\GDGV_Kecskés_László\sajatGuiDataGridView\sajatGuiDataGridView\bin\Debug\CryptSharp.dll
+D:\Suli\GDGV_Kecskés_László\sajatGuiDataGridView\sajatGuiDataGridView\bin\Debug\CryptSharp.pdb
+D:\Suli\GDGV_Kecskés_László\sajatGuiDataGridView\sajatGuiDataGridView\bin\Debug\CryptSharp.xml
