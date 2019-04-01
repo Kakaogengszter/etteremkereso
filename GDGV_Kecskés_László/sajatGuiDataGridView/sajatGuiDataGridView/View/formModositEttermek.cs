@@ -31,6 +31,7 @@ namespace sajatGuiDataGridView
             textBoxNev.Text = etterem.getNev();
             textBoxTipus.Text = etterem.getTipus();
             textBoxCim.Text = etterem.getCim();
+            textBoxKepEleres.Text = etterem.getKepEleres();
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -38,6 +39,7 @@ namespace sajatGuiDataGridView
             etterem.setNev(textBoxNev.Text);
             etterem.setTipus(textBoxTipus.Text);
             etterem.setCim(textBoxCim.Text);
+            etterem.setKepEleres(textBoxKepEleres.Text);
             this.Close();
         }
 

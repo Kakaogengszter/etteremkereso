@@ -36,15 +36,17 @@
             this.buttonMegsem = new System.Windows.Forms.Button();
             this.buttonKilep = new System.Windows.Forms.Button();
             this.buttonUjEtterem = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPageEttermek = new System.Windows.Forms.TabPage();
+            this.labelKepEleres = new System.Windows.Forms.Label();
+            this.textBoxKepEleres = new System.Windows.Forms.TextBox();
+            this.labelTipus = new System.Windows.Forms.Label();
+            this.labelCim = new System.Windows.Forms.Label();
+            this.labelNev = new System.Windows.Forms.Label();
+            this.buttonUjEtteremFelv = new System.Windows.Forms.Button();
             this.textBoxNev = new System.Windows.Forms.TextBox();
             this.textBoxTipus = new System.Windows.Forms.TextBox();
             this.textBoxCim = new System.Windows.Forms.TextBox();
-            this.buttonUjEtteremFelv = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPageEttermek = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabPageFelhasználók = new System.Windows.Forms.TabPage();
             this.buttonExitUsers = new System.Windows.Forms.Button();
             this.buttonCancelUsers = new System.Windows.Forms.Button();
@@ -77,6 +79,7 @@
             this.dataGridViewEttermek.Size = new System.Drawing.Size(521, 275);
             this.dataGridViewEttermek.TabIndex = 0;
             this.dataGridViewEttermek.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEttermek_CellDoubleClick);
+            this.dataGridViewEttermek.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEttermek_CellValueChanged);
             // 
             // buttonBetoltes
             // 
@@ -127,6 +130,7 @@
             this.buttonMegsem.TabIndex = 6;
             this.buttonMegsem.Text = "Mégsem";
             this.buttonMegsem.UseVisualStyleBackColor = true;
+            this.buttonMegsem.Click += new System.EventHandler(this.buttonMegsem_Click);
             // 
             // buttonKilep
             // 
@@ -149,37 +153,6 @@
             this.buttonUjEtterem.UseVisualStyleBackColor = true;
             this.buttonUjEtterem.Click += new System.EventHandler(this.buttonUjEtterem_Click);
             // 
-            // textBoxNev
-            // 
-            this.textBoxNev.Location = new System.Drawing.Point(91, 414);
-            this.textBoxNev.Name = "textBoxNev";
-            this.textBoxNev.Size = new System.Drawing.Size(171, 20);
-            this.textBoxNev.TabIndex = 9;
-            // 
-            // textBoxTipus
-            // 
-            this.textBoxTipus.Location = new System.Drawing.Point(91, 371);
-            this.textBoxTipus.Name = "textBoxTipus";
-            this.textBoxTipus.Size = new System.Drawing.Size(171, 20);
-            this.textBoxTipus.TabIndex = 10;
-            // 
-            // textBoxCim
-            // 
-            this.textBoxCim.Location = new System.Drawing.Point(91, 328);
-            this.textBoxCim.Name = "textBoxCim";
-            this.textBoxCim.Size = new System.Drawing.Size(171, 20);
-            this.textBoxCim.TabIndex = 11;
-            // 
-            // buttonUjEtteremFelv
-            // 
-            this.buttonUjEtteremFelv.Location = new System.Drawing.Point(335, 414);
-            this.buttonUjEtteremFelv.Name = "buttonUjEtteremFelv";
-            this.buttonUjEtteremFelv.Size = new System.Drawing.Size(127, 23);
-            this.buttonUjEtteremFelv.TabIndex = 14;
-            this.buttonUjEtteremFelv.Text = "Új étterem fevétel";
-            this.buttonUjEtteremFelv.UseVisualStyleBackColor = true;
-            this.buttonUjEtteremFelv.Click += new System.EventHandler(this.buttonUjEtteremFelv_Click);
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPageEttermek);
@@ -194,16 +167,18 @@
             // tabPageEttermek
             // 
             this.tabPageEttermek.BackColor = System.Drawing.Color.DimGray;
-            this.tabPageEttermek.Controls.Add(this.label3);
-            this.tabPageEttermek.Controls.Add(this.label2);
-            this.tabPageEttermek.Controls.Add(this.label1);
+            this.tabPageEttermek.Controls.Add(this.labelKepEleres);
+            this.tabPageEttermek.Controls.Add(this.textBoxKepEleres);
+            this.tabPageEttermek.Controls.Add(this.labelTipus);
+            this.tabPageEttermek.Controls.Add(this.labelCim);
+            this.tabPageEttermek.Controls.Add(this.labelNev);
             this.tabPageEttermek.Controls.Add(this.dataGridViewEttermek);
             this.tabPageEttermek.Controls.Add(this.buttonUjEtteremFelv);
-            this.tabPageEttermek.Controls.Add(this.textBoxCim);
+            this.tabPageEttermek.Controls.Add(this.textBoxNev);
             this.tabPageEttermek.Controls.Add(this.buttonMegsem);
             this.tabPageEttermek.Controls.Add(this.textBoxTipus);
             this.tabPageEttermek.Controls.Add(this.buttonMentes);
-            this.tabPageEttermek.Controls.Add(this.textBoxNev);
+            this.tabPageEttermek.Controls.Add(this.textBoxCim);
             this.tabPageEttermek.Controls.Add(this.buttonTorles);
             this.tabPageEttermek.Controls.Add(this.buttonKilep);
             this.tabPageEttermek.Controls.Add(this.buttonUjEtterem);
@@ -215,34 +190,80 @@
             this.tabPageEttermek.Size = new System.Drawing.Size(900, 562);
             this.tabPageEttermek.TabIndex = 0;
             this.tabPageEttermek.Text = "Éttermek";
-            this.tabPageEttermek.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // label3
+            // labelKepEleres
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(50, 378);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Típus";
+            this.labelKepEleres.AutoSize = true;
+            this.labelKepEleres.Location = new System.Drawing.Point(38, 458);
+            this.labelKepEleres.Name = "labelKepEleres";
+            this.labelKepEleres.Size = new System.Drawing.Size(86, 13);
+            this.labelKepEleres.TabIndex = 19;
+            this.labelKepEleres.Text = "Kép elérési címe";
             // 
-            // label2
+            // textBoxKepEleres
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(59, 417);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Cím";
+            this.textBoxKepEleres.Location = new System.Drawing.Point(130, 455);
+            this.textBoxKepEleres.Name = "textBoxKepEleres";
+            this.textBoxKepEleres.Size = new System.Drawing.Size(171, 20);
+            this.textBoxKepEleres.TabIndex = 18;
             // 
-            // label1
+            // labelTipus
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 335);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Név";
+            this.labelTipus.AutoSize = true;
+            this.labelTipus.Location = new System.Drawing.Point(89, 378);
+            this.labelTipus.Name = "labelTipus";
+            this.labelTipus.Size = new System.Drawing.Size(35, 13);
+            this.labelTipus.TabIndex = 17;
+            this.labelTipus.Text = "Típus";
+            // 
+            // labelCim
+            // 
+            this.labelCim.AutoSize = true;
+            this.labelCim.Location = new System.Drawing.Point(98, 417);
+            this.labelCim.Name = "labelCim";
+            this.labelCim.Size = new System.Drawing.Size(26, 13);
+            this.labelCim.TabIndex = 16;
+            this.labelCim.Text = "Cím";
+            // 
+            // labelNev
+            // 
+            this.labelNev.AutoSize = true;
+            this.labelNev.Location = new System.Drawing.Point(97, 335);
+            this.labelNev.Name = "labelNev";
+            this.labelNev.Size = new System.Drawing.Size(27, 13);
+            this.labelNev.TabIndex = 15;
+            this.labelNev.Text = "Név";
+            // 
+            // buttonUjEtteremFelv
+            // 
+            this.buttonUjEtteremFelv.Location = new System.Drawing.Point(347, 394);
+            this.buttonUjEtteremFelv.Name = "buttonUjEtteremFelv";
+            this.buttonUjEtteremFelv.Size = new System.Drawing.Size(127, 23);
+            this.buttonUjEtteremFelv.TabIndex = 14;
+            this.buttonUjEtteremFelv.Text = "Új étterem fevétel";
+            this.buttonUjEtteremFelv.UseVisualStyleBackColor = true;
+            this.buttonUjEtteremFelv.Click += new System.EventHandler(this.buttonUjEtteremFelv_Click);
+            // 
+            // textBoxNev
+            // 
+            this.textBoxNev.Location = new System.Drawing.Point(130, 328);
+            this.textBoxNev.Name = "textBoxNev";
+            this.textBoxNev.Size = new System.Drawing.Size(171, 20);
+            this.textBoxNev.TabIndex = 11;
+            // 
+            // textBoxTipus
+            // 
+            this.textBoxTipus.Location = new System.Drawing.Point(130, 371);
+            this.textBoxTipus.Name = "textBoxTipus";
+            this.textBoxTipus.Size = new System.Drawing.Size(171, 20);
+            this.textBoxTipus.TabIndex = 10;
+            // 
+            // textBoxCim
+            // 
+            this.textBoxCim.Location = new System.Drawing.Point(130, 414);
+            this.textBoxCim.Name = "textBoxCim";
+            this.textBoxCim.Size = new System.Drawing.Size(171, 20);
+            this.textBoxCim.TabIndex = 9;
             // 
             // tabPageFelhasználók
             // 
@@ -437,16 +458,9 @@
         private System.Windows.Forms.Button buttonMegsem;
         private System.Windows.Forms.Button buttonKilep;
         private System.Windows.Forms.Button buttonUjEtterem;
-        private System.Windows.Forms.TextBox textBoxNev;
-        private System.Windows.Forms.TextBox textBoxTipus;
-        private System.Windows.Forms.TextBox textBoxCim;
-        private System.Windows.Forms.Button buttonUjEtteremFelv;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPageEttermek;
         private System.Windows.Forms.TabPage tabPageFelhasználók;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonCancelUsers;
         private System.Windows.Forms.Button buttonMentUsers;
         private System.Windows.Forms.Button buttonTorolUsers;
@@ -461,6 +475,15 @@
         private System.Windows.Forms.Button buttonSaveKommentek;
         private System.Windows.Forms.Button buttonTorolKomment;
         private System.Windows.Forms.Button buttonKilepKommentek;
+        private System.Windows.Forms.Label labelTipus;
+        private System.Windows.Forms.Label labelCim;
+        private System.Windows.Forms.Label labelNev;
+        private System.Windows.Forms.Button buttonUjEtteremFelv;
+        private System.Windows.Forms.TextBox textBoxNev;
+        private System.Windows.Forms.TextBox textBoxTipus;
+        private System.Windows.Forms.TextBox textBoxCim;
+        private System.Windows.Forms.Label labelKepEleres;
+        private System.Windows.Forms.TextBox textBoxKepEleres;
     }
 }
 

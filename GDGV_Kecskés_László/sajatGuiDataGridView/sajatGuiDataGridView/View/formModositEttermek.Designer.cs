@@ -38,6 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonMegsem = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.textBoxKepEleres = new System.Windows.Forms.TextBox();
+            this.labelKepEleres = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxNev
@@ -96,7 +98,7 @@
             // buttonMegsem
             // 
             this.buttonMegsem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonMegsem.Location = new System.Drawing.Point(86, 178);
+            this.buttonMegsem.Location = new System.Drawing.Point(86, 227);
             this.buttonMegsem.Name = "buttonMegsem";
             this.buttonMegsem.Size = new System.Drawing.Size(75, 23);
             this.buttonMegsem.TabIndex = 7;
@@ -106,7 +108,7 @@
             // buttonSave
             // 
             this.buttonSave.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonSave.Location = new System.Drawing.Point(86, 224);
+            this.buttonSave.Location = new System.Drawing.Point(86, 267);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 8;
@@ -114,11 +116,29 @@
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // textBoxKepEleres
+            // 
+            this.textBoxKepEleres.Location = new System.Drawing.Point(86, 173);
+            this.textBoxKepEleres.Name = "textBoxKepEleres";
+            this.textBoxKepEleres.Size = new System.Drawing.Size(137, 20);
+            this.textBoxKepEleres.TabIndex = 9;
+            // 
+            // labelKepEleres
+            // 
+            this.labelKepEleres.AutoSize = true;
+            this.labelKepEleres.Location = new System.Drawing.Point(13, 176);
+            this.labelKepEleres.Name = "labelKepEleres";
+            this.labelKepEleres.Size = new System.Drawing.Size(63, 13);
+            this.labelKepEleres.TabIndex = 10;
+            this.labelKepEleres.Text = "Kép elérése";
+            // 
             // formModosit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(360, 450);
+            this.Controls.Add(this.labelKepEleres);
+            this.Controls.Add(this.textBoxKepEleres);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonMegsem);
             this.Controls.Add(this.label3);
@@ -145,5 +165,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonMegsem;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.TextBox textBoxKepEleres;
+        private System.Windows.Forms.Label labelKepEleres;
     }
 }

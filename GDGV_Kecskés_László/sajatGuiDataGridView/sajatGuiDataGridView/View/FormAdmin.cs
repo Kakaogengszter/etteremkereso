@@ -16,11 +16,9 @@ namespace sajatGuiDataGridView
     public partial class Form1 : Form
     {
         private MySQLDatabaseInterface mdi;
-        ///<value>Adatbázisból való beolvasás után ebben a táblában vannak a halfajadatok</value> 
         private DataTable ettermekDT;
         private DataTable usersDT;
         private DataTable kommentekDT;
-        private DataGridViewComboBoxColumn columnGyakorisag;
 
         public Form1()
         {
@@ -39,6 +37,7 @@ namespace sajatGuiDataGridView
         {
             feltoltVezerlotAdatbazisbolMindenAdattal();
             beallitVezerloketNemSzerkeszthetoAdateleressel();
+           
         }
 
         private void beallitVezerloketIndulaskor()
@@ -48,6 +47,16 @@ namespace sajatGuiDataGridView
             buttonTorles.Visible = false;
             buttonMentes.Visible = false;
             buttonMegsem.Visible = false;
+            buttonUjEtteremFelv.Visible = false;
+            textBoxNev.Visible = false;
+            textBoxKepEleres.Visible = false;
+            textBoxTipus.Visible = false;
+            textBoxCim.Visible = false;
+            labelNev.Visible = false;
+            labelTipus.Visible = false;
+            labelCim.Visible = false;
+            labelKepEleres.Visible = false;
+
         }
 
         private void buttonKilep_Click(object sender, EventArgs e)
@@ -100,6 +109,16 @@ namespace sajatGuiDataGridView
             buttonUjEtterem.Enabled = true;
             buttonModosit.Enabled = true;
             buttonTorles.Enabled = true;
+
+            buttonUjEtteremFelv.Visible = false;
+            textBoxNev.Visible = false;
+            textBoxTipus.Visible = false;
+            textBoxCim.Visible = false;
+            textBoxKepEleres.Visible = false;
+            labelNev.Visible = false;
+            labelTipus.Visible = false;
+            labelCim.Visible = false;
+            labelKepEleres.Visible = false;
 
             lettModositva = false;
         }
@@ -204,13 +223,21 @@ namespace sajatGuiDataGridView
             int sor = dataGridViewEttermek.Rows.Count - 1;
             dataGridViewEttermek.Rows[sor].Cells[0].Selected = true;
 
-            dataGridViewEttermek.Rows[sor].Cells[0].Value = "Írja ide az új adatot";
             dataGridViewEttermek.ReadOnly = false;
             for (int i = 0; i < sor; i = i + 1) dataGridViewEttermek.Rows[i].ReadOnly = true;
             dataGridViewEttermek.FirstDisplayedScrollingRowIndex = sor;
             dataGridViewEttermek.Columns[3].ReadOnly = true;
 
             this.ActiveControl = textBoxNev;
+            buttonUjEtteremFelv.Visible = true;
+            textBoxNev.Visible = true;
+            textBoxTipus.Visible = true;
+            textBoxCim.Visible = true;
+            textBoxKepEleres.Visible = true;
+            labelNev.Visible = true;
+            labelTipus.Visible = true;
+            labelCim.Visible = true;
+            labelKepEleres.Visible = true;
         }
 
         private void dataGridViewEttermek_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -219,10 +246,12 @@ namespace sajatGuiDataGridView
             int Id = Convert.ToInt32(dataGridViewEttermek.SelectedRows[0].Cells["Id"].Value);
 
             ettermek h = new ettermek(
+                 Convert.ToInt32(dataGridViewEttermek.SelectedRows[0].Cells["Id"].Value),
                 dataGridViewEttermek.SelectedRows[0].Cells["Nev"].Value.ToString(),
                 dataGridViewEttermek.SelectedRows[0].Cells["Tipus"].Value.ToString(),
                 dataGridViewEttermek.SelectedRows[0].Cells["Cim"].Value.ToString(),
-                Convert.ToInt32(dataGridViewEttermek.SelectedRows[0].Cells["Id"].Value)
+                dataGridViewEttermek.SelectedRows[0].Cells["kep_eleres"].Value.ToString()
+               
             );
 
             formModosit fh = new formModosit(h);
@@ -243,11 +272,11 @@ namespace sajatGuiDataGridView
                 query += "SET Nev=\"" + modositottEtterem.getNev() + "\"";
                 query += ", Tipus=\" " + modositottEtterem.getTipus() + "\"";
                 query += ", Cim=\" " + modositottEtterem.getCim() + "\"";
+                query += ", kep_eleres=\" " + modositottEtterem.getKepEleres() + "\"";
                 query += " WHERE Id= " + modositottEtterem.getId();
 
 
 
-                MessageBox.Show(query);
 
                 umdi.executeDMQuery(query);
 
@@ -259,9 +288,15 @@ namespace sajatGuiDataGridView
                 dataGridViewEttermek.Rows[sor].Cells["Nev"].Value = modositottEtterem.getNev();
                 dataGridViewEttermek.Rows[sor].Cells["Tipus"].Value = modositottEtterem.getTipus();
                 dataGridViewEttermek.Rows[sor].Cells["Cim"].Value = modositottEtterem.getCim();
+                dataGridViewEttermek.Rows[sor].Cells["kep_eleres"].Value = modositottEtterem.getKepEleres();
 
 
             }
+        }
+
+        private void buttonMegsem_Click(object sender, EventArgs e)
+        {
+            beallitVezerloketNemSzerkeszthetoAdateleressel();
         }
 
         private void buttonUjEtteremFelv_Click(object sender, EventArgs e)
@@ -286,7 +321,6 @@ namespace sajatGuiDataGridView
             query += "\"" + tipus + "\", ";
             query += "\"" + cim + ")";
             umdi.executeDMQuery(query);
-            MessageBox.Show(query);
 
             MessageBox.Show("Sikeres Adatfelvétel");
             umdi.close();
@@ -299,29 +333,12 @@ namespace sajatGuiDataGridView
             dataGridViewEttermek.Rows[sor].Cells["Cim"].Value = cim;
         }
 
-        private void comboBoxSzurGyakorisag_SelectionChangeCommitted(object sender, EventArgs e)
+        
+
+        private void dataGridViewEttermek_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            feltoltVezerlotAdatbazisbolMindenAdattal();
+            lettModositva = true;
         }
-
-        private void comboBoxSzurGyakorisag_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        /*private void comboBoxSzurGyakorisag_DropDownClosed(object sender, EventArgs e)
-       {
-           Adatbazis a = new Adatbazis();
-           mdi = a.kapcsolodas();
-           mdi.open();
-           //ettermekDT = mdi.getToDataTable("SELECT * FROM tipus WHERE Tipus='" + comboBoxSzurGyakorisag.SelectedValue.ToString()+ "'") ;
-           dataGridViewEttermek.DataSource = ettermekDT;
-       }*/
 
         #endregion
 
@@ -505,12 +522,7 @@ namespace sajatGuiDataGridView
                 query += " WHERE uid= " + modositottUsers.getuid();
 
 
-
-                MessageBox.Show(query);
-
                 umdi.executeDMQuery(query);
-
-                MessageBox.Show("Sikeres módosítás:" + modositottUsers.ToString());
                 umdi.close();
 
 
@@ -523,6 +535,11 @@ namespace sajatGuiDataGridView
             }
         }
 
+        private void dataGridViewUsers_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            lettModositva = true;
+        }
+
         #endregion
 
 
@@ -530,10 +547,7 @@ namespace sajatGuiDataGridView
 
 
 
-        private void dataGridViewUsers_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            lettModositva = true;
-        }
+
 
         private void buttonAdatokKommentek_Click(object sender, EventArgs e)
         {
@@ -688,15 +702,11 @@ namespace sajatGuiDataGridView
                 query += "SET username=\"" + torolKomment.getName() + "\"";
                 query += ", email=\" " + torolKomment.getComments() + "\"";
 
-
-                MessageBox.Show(query);
+                MessageBox.Show("Sikeres módosítás:" + torolKomment.ToString());
 
                 umdi.executeDMQuery(query);
 
-                MessageBox.Show("Sikeres módosítás:" + torolKomment.ToString());
                 umdi.close();
-
-
 
                 dataGridViewUsers.Rows[sor].Cells["username"].Value = torolKomment.getName();
                 dataGridViewUsers.Rows[sor].Cells["email"].Value = torolKomment.getComments();
@@ -705,6 +715,8 @@ namespace sajatGuiDataGridView
 
             }
         }
+
+       
     }
 
 }

@@ -16,6 +16,7 @@ namespace sajatGuiDataGridView
         private string Nev;
         private string Tipus;
         private string Cim;
+        private string kep_eleres;
         private int Id;
 
         public ettermek(int Id)
@@ -26,12 +27,18 @@ namespace sajatGuiDataGridView
             this.Cim = string.Empty;
         }
 
-        public ettermek(string Nev,string Tipus,string Cim,int Id)
+        public ettermek(int Id, string Nev, string Tipus, string Cim, string kep_eleres)
         {
             this.Id = Id;
             this.Nev = Nev;
             this.Tipus = Tipus;
             this.Cim = Cim;
+            this.kep_eleres = kep_eleres;
+        }
+
+        public int getId()
+        {
+            return Id;
         }
 
         public string getNev()
@@ -49,9 +56,9 @@ namespace sajatGuiDataGridView
             return Cim;
         }
 
-        public int getId()
+        public string getKepEleres()
         {
-            return Id;
+            return kep_eleres;
         }
 
         public void setNev(string Nev)
@@ -70,7 +77,10 @@ namespace sajatGuiDataGridView
             this.Cim = Cim;
         }
 
+        public void setKepEleres (string kep_eleres){
 
-        
+            this.kep_eleres = kep_eleres;
+        }
+
     }
 }
